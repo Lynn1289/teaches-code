@@ -1,0 +1,4 @@
+test_misc1 2 0.00832315
+test_misc2 4 0.00464513
+test_Ising_honeycomb 1 16.6778
+---

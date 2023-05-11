@@ -1,0 +1,15 @@
+Performing C++ SOURCE FILE Test HAVE_FLAG__ffile_prefix_map__home_sra123456_cp_githubtest_SJTU_CP2022_23_UnitTests_Catch2__ failed with the following output:
+Change Dir: /home/sra123456/cp/githubtest/SJTU CP2022-23/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_a2b99/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_a2b99.dir/build.make CMakeFiles/cmTC_a2b99.dir/build
+gmake[1]: Entering directory '/home/sra123456/cp/githubtest/SJTU CP2022-23/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_a2b99.dir/src.cxx.o
+/usr/bin/c++   -DHAVE_FLAG__ffile_prefix_map__home_sra123456_cp_githubtest_SJTU_CP2022_23_UnitTests_Catch2__   -ffile-prefix-map=/home/sra123456/cp/githubtest/SJTU CP2022-23/UnitTests/Catch2/= -std=gnu++14 -o CMakeFiles/cmTC_a2b99.dir/src.cxx.o -c "/home/sra123456/cp/githubtest/SJTU CP2022-23/build/CMakeFiles/CMakeTmp/src.cxx"
+c++: error: CP2022-23/UnitTests/Catch2/=: No such file or directory
+gmake[1]: *** [CMakeFiles/cmTC_a2b99.dir/build.make:85: CMakeFiles/cmTC_a2b99.dir/src.cxx.o] Error 1
+gmake[1]: Leaving directory '/home/sra123456/cp/githubtest/SJTU CP2022-23/build/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:140: cmTC_a2b99/fast] Error 2
+
+
+Source file was:
+int main() { return 0; }
