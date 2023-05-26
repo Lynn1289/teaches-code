@@ -1,11 +1,11 @@
 #include "Lattice.hpp"
-#include "../models/honeycomb/Ising_honeycomb.hpp"
+#include "../models/Kagome/Ising_Kagome.hpp"
 
 int Site::dim;
 int Site::N_SL;
 std::vector<int> Site::L;
 
-const int honeycombLattice::N_SL_SqLatt;
-const int honeycombLattice::z_common;
-const int honeycombLattice::z_common_half;
-constexpr int honeycombLattice::z_SqLatt[N_SL_SqLatt];
+const int KagomeLattice::N_SL_KgLatt;
+const int KagomeLattice::z_common;
+const int KagomeLattice::z_common_half;
+constexpr int KagomeLattice::z_KgLatt[N_SL_KgLatt];

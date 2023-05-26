@@ -1,4 +1,4 @@
-# Install script for directory: /home/sra123456/cp/githubtest/SJTU CP2022-23
+# Install script for directory: /home/lynn1289/桌面/code/MC
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -44,7 +44,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/sra123456/cp/githubtest/SJTU CP2022-23/build/UnitTests/Catch2/cmake_install.cmake")
+  include("/home/lynn1289/桌面/code/MC/build/UnitTests/Catch2/cmake_install.cmake")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -55,5 +55,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/sra123456/cp/githubtest/SJTU CP2022-23/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/lynn1289/桌面/code/MC/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

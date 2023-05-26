@@ -1,4 +1,4 @@
-# Install script for directory: /home/sra123456/cp/githubtest/SJTU CP2022-23/UnitTests/Catch2/src
+# Install script for directory: /home/lynn1289/桌面/code/MC/UnitTests/Catch2/src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

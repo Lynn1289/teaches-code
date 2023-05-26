@@ -340,9 +340,32 @@ public:
 		return _get_stderr_magz_sq(beta_idx) / eval_n_spins_sq();
 	};
 	
+	double _get_exact_magz_quar(int beta_idx) const {
+		return exact_magz.at(beta_idx)._q_quar();
+	};
+	double _get_exact_magz_quar_per_spin(int beta_idx) const {
+		return _get_exact_magz_quar(beta_idx) / eval_n_spins_quar();
+	};
+	double _get_obs_magz_quar(int beta_idx) const {
+		return magz.at(beta_idx)._q_quar();
+	};
+	double _get_obs_magz_quar_per_spin(int beta_idx) const {
+		return _get_obs_magz_quar(beta_idx) / eval_n_spins_quar();
+	};
+	double _get_stderr_magz_quar(int beta_idx) const {
+		return magz.at(beta_idx)._stderr_q_quar();
+	};
+	double _get_stderr_magz_quar_per_spin(int beta_idx) const {
+		return _get_stderr_magz_quar(beta_idx) / eval_n_spins_quar();
+	};
+
+	double _get_B_R(int beta_idx) const {
+		return _get_obs_magz_quar_per_spin(beta_idx) / _get_obs_magz_sq_per_spin(beta_idx) / _get_obs_magz_sq_per_spin(beta_idx);
+	};
+
 	void output_legends_MC(const std::string system_size) {
 		std::cout << system_size << std::endl;
-		std::cout << "# T[1] E[2] err[3] C[4] err[5] M[6] err[7] M^2[8] err[9]";
+		std::cout << "# T[1] E[2] err[3] C[4] err[5] M[6] err[7] M^2[8] err[9] M^4[10] err[11] B_R[12]";
 	};
 	
 	void output_data_MC(int beta_idx) {
@@ -354,12 +377,15 @@ public:
 		<< _get_obs_magz_per_spin(beta_idx) << ' '
 		<< _get_stderr_magz_per_spin(beta_idx) << ' '
 		<< _get_obs_magz_sq_per_spin(beta_idx) << ' '
-		<< _get_stderr_magz_sq_per_spin(beta_idx) << ' ';
+		<< _get_stderr_magz_sq_per_spin(beta_idx) << ' '
+		<< _get_obs_magz_quar_per_spin(beta_idx) << ' '
+		<< _get_stderr_magz_quar_per_spin(beta_idx) << ' '
+		<< _get_B_R(beta_idx) << ' ';
 	};
 	
 	void output_legends_exact(const std::string system_size) {
 		std::cout << system_size << std::endl;
-		std::cout << "# T[1] E[2] C[3] M[4] M^2[5]";
+		std::cout << "# T[1] E[2] C[3] M[4] M^2[5] M^4[6] B_R[7]";
 	};
 	
 	void output_data_exact(int beta_idx) {
@@ -367,12 +393,16 @@ public:
 		<< _get_exact_energy_per_spin(beta_idx) << ' '
 		<< _get_exact_C_per_spin(beta_idx) << ' '
 		<< _get_exact_magz_per_spin(beta_idx) << ' '
-		<< _get_exact_magz_sq_per_spin(beta_idx) << ' ';
+		<< _get_exact_magz_sq_per_spin(beta_idx) << ' '
+		<< _get_obs_magz_quar_per_spin(beta_idx) << ' '
+		<< _get_B_R(beta_idx) << ' ';
 	};
 	
 	int _mcs_sampling() const { return n_samples_per_bin * n_bins; };
 	
 	int eval_n_spins_sq() const {	return n_spins * n_spins;	};
+
+	int eval_n_spins_quar() const {	return n_spins * n_spins * n_spins * n_spins;	};
 
 protected:
 	static std::vector<double> eval_sorted_beta(std::vector<double> b) {

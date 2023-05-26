@@ -15,22 +15,22 @@ add_subdirectory(UnitTests/Catch2)
 #FetchContent_MakeAvailable(Catch2)
 
 ##### exact #####
-### Target (exact; honeycomb lattice)
-file( GLOB SRCS1_SQ models/honeycomb/Ising_honeycomb_exact.cpp ${UTILS} ${XML} *.hpp )
-add_executable(Ising_honeycomb_exact ${SRCS1_SQ})
-target_compile_options(Ising_honeycomb_exact PRIVATE -Wall -Wextra -O3 -static -DNDEBUG)
+### Target (exact; Kagome lattice)
+file( GLOB SRCS1_SQ models/Kagome/Ising_Kagome_exact.cpp ${UTILS} ${XML} *.hpp )
+add_executable(Ising_Kagome_exact ${SRCS1_SQ})
+target_compile_options(Ising_Kagome_exact PRIVATE -Wall -Wextra -O3 -static -DNDEBUG)
 
 ##### prototype of MC #####
-### Target (prototype MC; honeycomb lattice)
-file( GLOB SRCS2_SQ models/honeycomb/Ising_honeycomb_Prototype.cpp ${UTILS} ${XML} *.hpp )
-add_executable(Ising_honeycomb_MC_Prototype ${SRCS2_SQ})
-target_compile_options(Ising_honeycomb_MC_Prototype PRIVATE -Wall -Wextra -O3 -static -DNDEBUG)
+### Target (prototype MC; Kagome lattice)
+file( GLOB SRCS2_SQ models/Kagome/Ising_Kagome_Prototype.cpp ${UTILS} ${XML} *.hpp )
+add_executable(Ising_Kagome_MC_Prototype ${SRCS2_SQ})
+target_compile_options(Ising_Kagome_MC_Prototype PRIVATE -Wall -Wextra -O3 -static -DNDEBUG)
 
 ##### normal MC #####
-### Target (normal MC; honeycomb lattice)
-file( GLOB SRCS2_SQ models/honeycomb/Ising_honeycomb_MC.cpp ${UTILS} ${XML} *.hpp )
-add_executable(Ising_honeycomb_MC ${SRCS2_SQ})
-target_compile_options(Ising_honeycomb_MC PRIVATE -Wall -Wextra -O3 -static -DNDEBUG)
+### Target (normal MC; Kagome lattice)
+file( GLOB SRCS2_SQ models/Kagome/Ising_Kagome_MC.cpp ${UTILS} ${XML} *.hpp )
+add_executable(Ising_Kagome_MC ${SRCS2_SQ})
+target_compile_options(Ising_Kagome_MC PRIVATE -Wall -Wextra -O3 -static -DNDEBUG)
 
 ###### Unit tests
 enable_testing()
@@ -49,8 +49,8 @@ target_compile_options(test_misc2 PRIVATE -Wall -Wextra -O2)
 target_link_libraries(test_misc2 PRIVATE Catch2::Catch2WithMain)
 add_test(test_misc2 test_misc2)
 
-### Unit test (normal MC; honeycomb lattice)
-add_executable(test_Ising_honeycomb UnitTests/models/Ising_honeycomb_test.cpp ${UTILS} ${XML})
-target_compile_options(test_Ising_honeycomb PRIVATE -Wall -Wextra -O2)
-target_link_libraries(test_Ising_honeycomb PRIVATE Catch2::Catch2WithMain)
-add_test(test_Ising_honeycomb test_Ising_honeycomb)
+### Unit test (normal MC; Kagome lattice)
+add_executable(test_Ising_Kagome UnitTests/models/Ising_Kagome_test.cpp ${UTILS} ${XML})
+target_compile_options(test_Ising_Kagome PRIVATE -Wall -Wextra -O2)
+target_link_libraries(test_Ising_Kagome PRIVATE Catch2::Catch2WithMain)
+add_test(test_Ising_Kagome test_Ising_Kagome)
